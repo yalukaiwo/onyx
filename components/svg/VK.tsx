@@ -1,6 +1,12 @@
-import { ISVGProps } from "./props";
+export interface IVKProps {
+  width: number;
+  height: number;
+  color?: string;
+  opacity?: number;
+  className?: string;
+}
 
-const VK: React.FC<ISVGProps> = ({
+const VK: React.FC<IVKProps> = ({
   width,
   height,
   color,
