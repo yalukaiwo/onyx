@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Banner = () => {
+  const router = useRouter();
+
   return (
     <section
       style={{
@@ -19,7 +22,12 @@ const Banner = () => {
         <h4 className="font-medium text-[15px] leading-[22px] mt-[16px]">
           Мы предлагаем надёжные решения для вашего бизнеса
         </h4>
-        <button className="px-[20px] py-[10px] bg-[#0047FF] text-white text-[14px] leading-[19px] rounded-[3px] mt-[24px]">
+        <button
+          onClick={() => {
+            router.push("/servers", undefined, { shallow: true });
+          }}
+          className="px-[20px] py-[10px] bg-[#0047FF] text-white text-[14px] leading-[19px] rounded-[3px] mt-[24px] border-[1px] border-[#0047FF] hover:text-[#0047FF] hover:bg-transparent"
+        >
           Выбрать услугу
         </button>
       </div>

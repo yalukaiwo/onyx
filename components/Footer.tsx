@@ -19,7 +19,7 @@ const Footer = () => {
           </h3>
           <ul className="flex flex-col gap-[16px]">
             <li className="w-[160px] font-medium text-[15px] leading-[18px] text-[#54596A]">
-              <Link href="">Выделенные серверы</Link>
+              <Link href="/servers">Выделенные серверы</Link>
             </li>
             <li className="w-[160px] font-medium text-[15px] leading-[18px] text-[#54596A]">
               <Link href="">Защита от DDoS-атак</Link>
