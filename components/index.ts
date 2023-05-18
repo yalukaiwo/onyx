@@ -6,3 +6,6 @@ export { default as ServiceCard } from "./ServiceCard";
 export { default as Filters } from "./Filters";
 export { default as FiltersInput } from "./FiltersInput";
 export { default as FiltersCountryInput } from "./FiltersCountryInput";
+export { default as RangeInput } from "./RangeInput";
+export { default as MultipleCheckboxInput } from "./MultipleCheckboxInput";
+export { default as CheckboxInput } from "./CheckboxInput";

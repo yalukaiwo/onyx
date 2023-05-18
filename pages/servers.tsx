@@ -1,8 +1,7 @@
 import { Filters } from "@/components";
-import { IFilters } from "@/interfaces";
+import { IFilters, IFiltersPresets } from "@/interfaces";
 import { withLayout } from "@/layout";
 import { useState } from "react";
-import { ICountry } from "@/interfaces";
 
 enum Sections {
   PremadeServers,
@@ -13,6 +12,14 @@ enum Sections {
 const Servers = () => {
   const [section, setSection] = useState<Sections>(Sections.PremadeServers);
 
+  const [filtersPresets, _] = useState<IFiltersPresets>({
+    price: [1200, 156400],
+    cores: [16, 128],
+    latency: [2.4, 5.5],
+    capacity: [120, 16384],
+    speed: [100, 10000],
+  });
+
   const [filters, setFilters] = useState<IFilters>({
     search: "",
     location: {
@@ -20,7 +27,7 @@ const Servers = () => {
       id: 0,
       label: "Выбор локации",
     },
-    price: [0, 156400],
+    price: [1200, 156400],
     processor: [],
     cores: [16, 128],
     latency: [2.4, 5.5],
@@ -75,7 +82,11 @@ const Servers = () => {
       </div>
       <section className="grid grid-cols-4 gap-[28px]">
         <div className="w-full">
-          <Filters filters={filters} setFilters={setFilters} />
+          <Filters
+            filters={filters}
+            setFilters={setFilters}
+            presets={filtersPresets}
+          />
         </div>
         <div className="col-span-3 w-full"></div>
       </section>

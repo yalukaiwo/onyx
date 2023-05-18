@@ -1,38 +1,30 @@
 import ICountry from "./country";
 
-enum Processor {
-  Intel,
-  AMD,
+export interface IFiltersPresets {
+  price: [number, number];
+  cores: [number, number];
+  latency: [number, number];
+  capacity: [number, number];
+  speed: [number, number];
 }
 
-enum RAM {
-  DDR3,
-  DDR4,
-  DDR5,
-}
-
-enum Drive {
-  HDD,
-  SSD,
-  NVME,
-}
-
-enum Protection {
-  Basic,
-  Game,
-  None,
+export interface IFiltersCheckbox {
+  processor: string[];
+  ram: string[];
+  drive: string[];
+  protection: string[];
 }
 
 export default interface IFilters {
   search: string;
   location: ICountry;
   price: [number, number];
-  processor: Processor[];
+  processor: string[];
   cores: [number, number];
   latency: [number, number];
-  ram: RAM[];
+  ram: string[];
   capacity: [number, number];
-  drive: Drive[];
+  drive: string[];
   speed: [number, number];
-  protection: Protection[];
+  protection: string[];
 }
