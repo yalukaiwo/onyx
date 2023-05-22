@@ -64,19 +64,23 @@ const FiltersCountryInput: React.FC<IFiltersCountryInput> = ({
         />
       </div>
       <div
-        className={`absolute ${
-          !isOpen ? "hidden" : ""
-        } overflow-auto scrollbar-hide w-full p-[9px] bg-[rgba(255, 255, 255, 0.82)] border-[1px] border-[#E6E6E6] left-0 top-[calc(100%+8px)] rounded-[3px] max-h-[250px] bg-white z-50`}
+        className={`absolute grid ${
+          !isOpen ? "grid-rows-[0fr]" : "grid-rows-[1fr]"
+        } transition-height duration-[0.35s] left-0 top-[calc(100%+8px)] w-full z-50`}
       >
-        {country.id !== 0 && (
-          <div className="w-full p-[12px] border-[1px] bg-[#0047FF] border-[#E6E6E6] rounded-[3px] flex items-center cursor-pointer">
-            <Flag size={19} type={country.flag} />
-            <span className="font-semibold text-[14px] leading-[19px] text-white ml-[17px]">
-              {country.label}
-            </span>
+        <div className="overflow-auto scrollbar-hide w-full ">
+          <div className="p-[9px] bg-[rgba(255, 255, 255, 0.82)] border-[1px] border-[#E6E6E6] rounded-[3px] max-h-[250px] bg-white">
+            {country.id !== 0 && (
+              <div className="w-full p-[12px] border-[1px] bg-[#0047FF] border-[#E6E6E6] rounded-[3px] flex items-center cursor-pointer">
+                <Flag size={19} type={country.flag} />
+                <span className="font-semibold text-[14px] leading-[19px] text-white ml-[17px]">
+                  {country.label}
+                </span>
+              </div>
+            )}
+            {...countriesJSX}
           </div>
-        )}
-        {...countriesJSX}
+        </div>
       </div>
     </div>
   );
